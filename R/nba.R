@@ -18,7 +18,24 @@
 #' @param interventionper Number used to calculate the number of interventions avoided by. Default is \code{100}.
 #' @param smooth If set to \code{TRUE}, a smoothed net benefit values are calculated.
 #' @param loess.span The value of \code{span} for the loess smoothing.
-#' @return
+#' @return If the nba() function is stored in an object, the resulting output will contain an object of type list
+#'   containing values of the net benefit of the specified prediction models in addition to the reduction in
+#'   interventions.
+#' @author Chong Kim \email{chong.kim@ucdenver.edu} and Andrew Vickers \email{vickersa@mskcc.org} based on the \href{http://journals.sagepub.com/doi/abs/10.1177/0272989x06295361}{2006 Article}
+#' @references Vickers, A. (2008), Decision Curve Analysis: A Novel Method for Evaluating Prediction Models Vol 26,
+#'   Issue 6, 2006.
+#' @seealso \code{\link[DecisionCurve]{DecisionCurve}}
+#' @examples
+#' ## standard net benefit analysis
+#' nba(cancer ~ famhistory + age + marker, data.set, pred.mode= c("glm","rpart","svm","rf"))
+#'
+#' ## loess smooth
+#' modified_dca(cancer ~ famhistory + age + marker, data.set, pred.mode= c("glm","rpart","svm","rf"), smooth = TRUE, loess.span = 0.5)
+#'
+#' ## plot intervention reduced
+#' modified_dca(cancer ~ famhistory + age + marker, data.set, pred.mode= c("glm","rpart","svm","rf"), smooth = TRUE, loess.span = 0.5, intervention = TRUE)
+
+
 
 
 nba <- function(formula, data, xstart=0.01, xstop=0.99, xby=0.01,
