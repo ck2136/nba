@@ -1,0 +1,29 @@
+Package: nba
+Type: Package
+Title: Calculate Net Benefit of Prediction Models and Predictive Markers
+Version: 0.0.0.9000
+Date: 2018-02-22
+Author@R: c(
+    person("Chong", "Kim", role = c("aut","cre"), email = "chong.kim@ucdenver.edu"),
+    person("Andrew", "Vickers", role = c("aut", "trl", "cre"), email = "vickersa@mskcc.org", comment = "The originator"))
+Maintainer: Chong Kim <chong.kim@ucdenver.edu>
+Description: Calculation of the net benefit of prediction models nad predictive markers.
+The package provides functions that compare the net benefit of various prediction models
+and predictive markers. K-fold validiation and bootstrapping methods are included to 
+mitigate overfitting and obtaining hyperparameter values appropriate for each prediction
+models.
+License: Unlimited
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr,
+    stats,
+    xgboost,
+    e1071,
+    rpart,
+    randomForest
+Suggests:
+    caret,
+    boot
+URL: http://www.pharmacoecon.me
+BugReports: https://github.com/ck2136/nba/issues
